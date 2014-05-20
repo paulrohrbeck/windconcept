@@ -1,0 +1,389 @@
+/* 
+  HTML5 ✰ Boilerplate 
+  
+  style.css contains a reset, font normalization and some base styles.
+  
+  credit is left where credit is due.
+  much inspiration was taken from these projects:
+    yui.yahooapis.com/2.8.1/build/base/base.css
+    camendesign.com/design/
+    praegnanz.de/weblog/htmlcssjs-kickstart
+*/
+
+/* 
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+/* END RESET CSS */
+
+
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+   Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
+
+  There are three custom edits:
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
+   * table font-size is reset in the HTML5 reset above so there is no need to repeat
+*/
+body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+
+select, input, textarea, button { font:99% sans-serif; }
+
+/* normalize monospace sizing 
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+ 
+
+/* 
+ * minimal base styles 
+ */
+
+
+body, select, input, textarea { 
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
+  color: #444; 
+  /* set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */   
+}
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+   you'll want to define those yourself. */ 
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+
+/* always force a scrollbar in non-IE */ 
+html { overflow-y: scroll; }
+
+ 
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+a, a:active, a:visited { color: #185467; }
+a:hover { color: #000; }
+
+
+ul, ol { margin-left: 1.8em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; } 
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td, td img { vertical-align: top; } 
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre { 
+  padding: 15px; 
+  
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+ 
+textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+ 
+/* webkit browsers add a 2px margin outside the chrome of form elements */  
+button, input, select, textarea { margin: 0; }
+
+/* colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { 
+      border-radius: 1px;
+    -moz-box-shadow: 0px 0px 5px red; 
+ -webkit-box-shadow: 0px 0px 5px red; 
+         box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate.
+   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   Also: hot pink. */
+::-moz-selection{ background: #222; color:#fff; text-shadow: none; }
+::selection { background:#222; color:#fff; text-shadow: none; } 
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+ 
+/* bicubic resizing for non-native sized IMG: 
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+
+/* 
+ * Non-semantic helper classes 
+ */
+
+/* for image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; } 
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+.visuallyhidden { position: absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+.clearfix:before, .clearfix:after {
+  content: "\0020"; display: block; height: 0; visibility: hidden;	
+} 
+
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+
+
+
+
+ /* Primary Styles
+    Author: Paul Rohrbeck (www.paro22.com)
+	
+	Colors used:
+		- helles Blau: #EAF0F5;
+		- Cyan: #009EE0;
+ */
+
+  
+body { background:#EAF0F5 url('../images/page-bg.png') repeat-x; }
+#page { width:850px; margin:0 auto !important; background:url('../images/logo_klein.png') no-repeat 65px bottom; }
+ 
+header#main-header { padding: 20px 0;}
+header#main-header h1{ background:url("../images/logo.png"); width:360px; height:80px; margin: 0 auto; }
+header#main-header h1 a{ display:block; width:360px; height:80px; }
+
+nav#main-navigation { float:left; width:130px; }
+nav#main-navigation li { list-style-type:none; padding:6px 13px 6px 6px; line-height:150%; margin:0 0 5px; border:1px solid #EAF0F5; text-align:right; } 
+nav#main-navigation li.aktiv{ background:#fff; border-color:#ccc; border-right:0; z-index:2; position:relative; right:-1px; text-align:left; } 
+nav#main-navigation li:hover{ background:#fff; border-color:#ccc; border-right:0; z-index:2; position:relative; right:-1px; padding:6px 14px 6px 6px; } 
+nav#main-navigation li a { text-decoration: none; display:block; }
+nav#main-navigation li.aktiv a { border-left: 10px solid; padding:0 0 0 5px; }
+nav#main-navigation li.aktiv a.startseite, nav#main-navigation li.aktiv a.unternehmen, nav#main-navigation li.aktiv a.planung, nav#main-navigation li.aktiv a.uebersicht, nav#main-navigation li.aktiv a.standort, nav#main-navigation li.aktiv a.fuehrung { border-left-color: #009EE0; }
+ 
+h2.startseite, h2.unternehmen, h2.planung, h2.uebersicht, h2.standort, h2.fuehrung { color: #009EE0; }
+ 
+#main { } 
+#content { width: 658px; min-height:420px; float:right; padding:30px; line-height:150%; background:#fff; border:1px solid #ccc; z-index:1; position:relative; -webkit-box-shadow: 2px 3px 6px #ddd; -moz-box-shadow: 2px 3px 6px #ddd; box-shadow: 2px 3px 6px #ddd; }
+
+footer#main-footer { clear:both; text-align: right; padding:20px 0 30px 0; } 
+.ie6 footer#main-footer, .ie7 footer#main-footer  { padding:10px 0 30px 0; }
+footer ul#meta-navigation { margin:0; }
+footer ul#meta-navigation li { list-style-type:none; margin:0 1em 0 0; display:inline; border-right:1px solid #ccc; padding:0 1em 0 0; }
+footer ul#meta-navigation li:last-child{ border:none; margin-right: 0; }
+
+#main h2.big-title { font-size: 200%; line-height: 150%; margin:0 0 0.3em; border:0; }
+#main p.intro-text { font-size: 125%; line-height: 150%; }
+
+#slideshow { border:1px solid #ddd; margin:0 auto 40px auto; width:650px; height:310px; overflow: hidden; -webkit-box-shadow: 3px 3px 5px #eee; -moz-box-shadow: 3px 3px 5px #eee; box-shadow: 3px 3px 5px #eee; }
+#slideshow img { margin:5px; }
+#content h2 { font-size: 170%; margin:0 0 1em 0; padding:0 0 5px; border-bottom:1px dashed #ddd; line-height:150%; }
+#content h3 { font-size: 150%; margin:1em 0 1em 0; line-height:150%; }
+#content p { margin:0 0 1em 0; }
+
+ul.check-list { margin:1em 0 0 3em; list-style-image:url('../images/check.png'); }
+ul.check-list li { margin:0 0 1em 0; padding:0 0 0 3px; }
+ul.simple-list li { list-style-type:none; }
+li.spacer-top { margin-top:1em; }
+
+div.table-border { border:1px solid #ddd; padding:1px; }
+table { width:100%; }
+table th, table td { padding:5px 10px; }
+table td { text-align:center; }
+table th { font-weight:bold; background:#EAF0F5; border:1px solid #fff; }
+table tr.odd td { background:#f6f6f6; }
+table tbody tr:hover td{ background:#f1f1f1; }
+
+form p { clear:both; overflow:hidden; }
+label { display:block; float:left; width: 200px; }
+input, textarea { display:block; float:left; border:1px solid #ddd; padding:5px; }
+input#submit { margin:0 0 0 200px; font-weight:bold; background:#009EE0; color:#fff; border:1px solid #aaa; }
+input#submit:hover{ background:#185467; }
+p.info { color:#666; font-size:90%; }
+label.error { line-height:150%; border:1px solid #dbb; background:#fdd; color:#333; margin: 10px 0 0 200px; padding: 3px 7px; clear:both; }
+p.error { line-height:150%; border:1px solid #dbb; background:#fdd; color:#333; margin:10px; padding: 20px; clear:both; }
+p.ok { line-height:150%; border: 1px #bdb solid; background: #dfd; color:#333; margin:10px; padding: 20px; clear:both; }
+
+img.content-image { margin:0 0 20px 20px; border:1px solid #ddd; padding:5px; }
+#content p.content-image-caption { text-align:right; margin:-15px 0 0 0; }
+.float-left { float:left; margin-right:20px !important; }
+.float-right { float:right; margin-left:20px !important; }
+a.lightbox { display:block; }
+.clear { clear:both; display:block; }
+img.no-margin-image { margin:20px 0; }
+.image-gallery .content-image { float:left; margin:0 7px 10px 0; border:1px solid #ddd; padding:5px; }
+
+p.error-note { line-height:150%; border:1px solid #dbb; background:#fdd; color:#333; padding: 20px; margin: 0 0 10px 0; }
+p.error-note a{ color:red; }
+p.error-note a:hover{ color:red; }
+
+
+
+
+/*
+ * Media queries for responsive design
+ * These follow after primary styles so they will successfully override. 
+ */
+
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+  
+}
+
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+  
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  
+  
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ */
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+  
+  header#main-header h1 { font-size: 200%; width:100%; height: 70px; } 
+  header#main-header h1 a{ width:100%; height: 70px; } 
+  .ir { text-indent:0em; }
+  nav#main-navigation li { border:none; }
+  #content { border:none; -webkit-box-shadow:0 0 0 #fff;-moz-box-shadow:0 0 0 #fff; box-shadow:0 0 0 #fff; }
+}
+
+
+/* jQuery Plug-Ins */
+
+/**
+ * jQuery lightBox plugin
+ * This jQuery plugin was inspired and based on Lightbox 2 by Lokesh Dhakar (http://www.huddletogether.com/projects/lightbox2/)
+ * and adapted to me for use like a plugin from jQuery.
+ * @name jquery-lightbox-0.5.css
+ * @author Leandro Vieira Pinho - http://leandrovieira.com
+ * @version 0.5
+ * @date April 11, 2008
+ * @category jQuery plugin
+ * @copyright (c) 2008 Leandro Vieira Pinho (leandrovieira.com)
+ * @license CCAttribution-ShareAlike 2.5 Brazil - http://creativecommons.org/licenses/by-sa/2.5/br/deed.en_US
+ * @example Visit http://leandrovieira.com/projects/jquery/lightbox/ for more informations about this jQuery plugin
+ */
+ 
+#jquery-overlay{position:absolute;top:0;left:0;z-index:90;width:100%;height:500px;}
+#jquery-lightbox{position:absolute;top:0;left:0;width:100%;z-index:100;text-align:center;line-height:0;}
+#jquery-lightbox a img{border:none;}
+#lightbox-container-image-box{position:relative;background-color:#fff;width:250px;height:250px;margin:0 auto;}
+#lightbox-container-image{padding:10px;}
+#lightbox-loading{position:absolute;top:40%;left:0;height:25%;width:100%;text-align:center;line-height:0;}
+#lightbox-nav{position:absolute;top:0;left:0;height:100%;width:100%;z-index:10;}
+#lightbox-container-image-box > #lightbox-nav{left:0;}
+#lightbox-nav a{outline:none;}
+#lightbox-nav-btnPrev,#lightbox-nav-btnNext{width:49%;height:100%;zoom:1;display:block;}
+#lightbox-nav-btnPrev{left:0;float:left; background:url('../images/lightbox-btn-prev.gif') no-repeat left 15% !important;}
+#lightbox-nav-btnNext{right:0;float:right; background:url('../images/lightbox-btn-next.gif') no-repeat right 15% !important; }
+#lightbox-container-image-data-box{font:10px Verdana, Helvetica, sans-serif;background-color:#fff;margin:0 auto;line-height:1.4em;overflow:auto;width:100%;padding:0 10px;}
+#lightbox-container-image-data{padding:0 10px;color:#666;}
+#lightbox-container-image-data #lightbox-image-details{width:70%;float:left;text-align:left;}
+#lightbox-image-details-caption{font-weight:700;}
+#lightbox-image-details-currentNumber{display:block;clear:left;padding-bottom:1em;}
+#lightbox-secNav-btnClose{width:66px;float:right;padding-bottom:.7em;}
